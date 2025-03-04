@@ -32,6 +32,7 @@
                 <button class="btn btn-primary" onclick="addTask()">Add</button>
             </div>
             <ul id="taskList" class="list-group"></ul>
+            <button class="btn btn-danger mt-3 w-100" onclick="clearAllTasks()">Delete All</button>
         </div>
     </div>
 
@@ -103,6 +104,11 @@
         function removeTask(button) {
             button.parentElement.parentElement.remove();
             saveTasks();
+        }
+
+        function clearAllTasks() {
+            document.getElementById("taskList").innerHTML = "";
+            localStorage.removeItem("tasks");
         }
     </script>
 </body>
